@@ -1,0 +1,286 @@
+:root {
+    --primary-text: #1a1a1a;
+    --secondary-text: #4a4a4a;
+    --accent-color: #2c5282;
+    --accent-hover: #1a365d;
+    --border-color: #e5e5e5;
+    --bg-main: #ffffff;
+    --bg-subtle: #fafafa;
+    --highlight-bg: #f7f9fc;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--primary-text);
+    background-color: var(--bg-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    margin-bottom: 60px;
+}
+
+.profile-section {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.profile-image-container {
+    flex-shrink: 0;
+    animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.profile-image {
+    width: 360px;
+    height: 440px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.profile-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content {
+    flex: 1;
+    animation: slideInRight 0.8s ease-out 0.3s both;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.name {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: var(--primary-text);
+    line-height: 1.2;
+}
+
+.bio,
+.research-intro,
+.contact {
+    margin-bottom: 18px;
+    color: var(--secondary-text);
+}
+
+.job-market {
+    margin: 28px 0;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, var(--highlight-bg) 0%, #ffffff 100%);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 6px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+}
+
+.highlight {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-color);
+    letter-spacing: 0.02em;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    position: relative;
+    transition: var(--transition);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+strong {
+    font-weight: 600;
+    color: var(--primary-text);
+}
+
+.navigation {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+    animation: fadeIn 0.8s ease-out 0.6s both;
+}
+
+.nav-link {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-text);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 8px 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.footer {
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+    animation: fadeIn 0.8s ease-out 0.8s both;
+}
+
+.footer p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: var(--secondary-text);
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 20px;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .profile-image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-image {
+        width: 160px;
+        height: 190px;
+    }
+
+    .name {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .navigation {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    .profile-image {
+        width: 140px;
+        height: 170px;
+    }
+
+    .job-market {
+        padding: 14px 18px;
+    }
+}

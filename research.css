@@ -1,0 +1,181 @@
+.page-header {
+    margin-bottom: 50px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.back-link {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: var(--secondary-text);
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+    transform: translateX(-5px);
+}
+
+.page-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--primary-text);
+    margin-bottom: 10px;
+}
+
+.research-section {
+    margin-bottom: 60px;
+    animation: fadeIn 0.8s ease-out 0.3s both;
+}
+
+.section-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.paper {
+    margin-bottom: 40px;
+    padding: 24px;
+    background: var(--bg-subtle);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.paper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-color);
+}
+
+.paper-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--primary-text);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.paper-meta {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: var(--secondary-text);
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.paper-abstract {
+    color: var(--secondary-text);
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.paper-abstract-short {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--secondary-text);
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.paper-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.paper-link {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent-color);
+    padding: 8px 16px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.paper-link::after {
+    display: none;
+}
+
+.paper-link:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.course {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--bg-subtle);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.course:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.course-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-text);
+    margin-bottom: 6px;
+}
+
+.course-meta {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: var(--secondary-text);
+    margin-bottom: 12px;
+}
+
+.course-description {
+    color: var(--secondary-text);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .paper,
+    .course {
+        padding: 18px;
+    }
+
+    .paper-title,
+    .course-title {
+        font-size: 18px;
+    }
+
+    .paper-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .paper-link {
+        text-align: center;
+    }
+}
